@@ -13,10 +13,9 @@ function App() {
   const [isAnswerSubmitted, setIsAnswerSubmitted] = React.useState(false);
   const [isAnswerCorrect, setIsAnswerCorrect] = React.useState(false);
 
-  const getBooleanFromString = (arg) => {
-    if (arg === "True") return true;
-    return false;
-  };
+  React.useEffect(() => {
+    setCurrentQuestion(formatQuestion(questions[0]));
+  }, []);
 
   const formatQuestion = (question) => {
     question.question = decodeURIComponent(question.question);
@@ -36,9 +35,10 @@ function App() {
     return question;
   };
 
-  React.useEffect(() => {
-    setCurrentQuestion(formatQuestion(questions[0]));
-  }, []);
+  const getBooleanFromString = (arg) => {
+    if (arg === "True") return true;
+    return false;
+  };
 
   const getQuestionIndex = () => questions.indexOf(currentQuestion);
 
