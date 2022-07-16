@@ -1,0 +1,12 @@
+.displayContainer {
+  /* display: block; */
+}
+.PrograssBar {
+  height: 100%;
+  width: 100%;
+  /* position: relative; */
+}
+
+.progess {
+  height: 20px;
+}
